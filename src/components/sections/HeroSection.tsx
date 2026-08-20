@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
-import { CheckoutButton } from "@/components/ui/CheckoutButton";
+import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { PerfumeBottle } from "@/components/ui/PerfumeBottle";
 
@@ -24,7 +24,7 @@ export function HeroSection() {
             <Reveal delay={0.3}>
               <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 pt-4">
                 <div className="flex flex-col items-center md:items-start">
-                  <CheckoutButton className="w-full sm:w-auto">Escolher minha fragrância</CheckoutButton>
+                  <Button as="a" href="/pedido" variant="primary" className="w-full sm:w-auto">Escolher minha fragrância</Button>
                   <span className="text-xs mt-2 text-marfim/70">Envio rápido • Fracionado na hora do pedido</span>
                 </div>
                 <div className="flex flex-col items-center md:items-start">

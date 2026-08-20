@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
-import { CheckoutButton } from "@/components/ui/CheckoutButton";
+import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { PerfumeBottle } from "@/components/ui/PerfumeBottle";
 
@@ -72,7 +72,7 @@ export function OfertaSection() {
               <p className="text-center text-marfim/70">Pagamento via Pix, cartão ou boleto (Mercado Pago / PagSeguro)</p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <CheckoutButton className="w-full sm:w-auto text-lg px-8">Comprar agora</CheckoutButton>
+                <Button as="a" href="/pedido" variant="primary" className="w-full sm:w-auto text-lg px-8">Comprar agora</Button>
                 <span className="text-marfim/50 hidden sm:inline">ou</span>
                 <WhatsAppButton className="w-full sm:w-auto text-marfim border-ambar hover:text-carvao">Tirar dúvida antes no WhatsApp</WhatsAppButton>
               </div>
