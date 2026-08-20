@@ -118,7 +118,12 @@ export default function PedidoPage() {
                 />
               </div>
 
-              <Button type="submit" variant="primary" className="w-full text-lg" disabled={!podeEnviar}>
+              {!WHATSAPP_NUMBER && (
+                <p className="text-sm text-bordo bg-bordo/5 border border-bordo/20 rounded p-3">
+                  WhatsApp ainda não configurado (NEXT_PUBLIC_WHATSAPP_NUMBER). O envio não vai funcionar até essa variável ser definida no ambiente.
+                </p>
+              )}
+              <Button type="submit" variant="primary" className="w-full text-lg" disabled={!podeEnviar || !WHATSAPP_NUMBER}>
                 Enviar pedido pelo WhatsApp
               </Button>
             </form>
