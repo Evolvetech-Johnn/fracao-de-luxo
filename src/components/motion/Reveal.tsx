@@ -2,12 +2,11 @@
 
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { fadeUpVariant, fadeOnlyVariant, staggerContainerVariant, EASING_IN } from "./variants";
+import { fadeUpVariant, fadeOnlyVariant, staggerContainerVariant } from "./variants";
 
 export function Reveal({ children, delay = 0, className = '' }: { children: React.ReactNode, delay?: number, className?: string }) {
   const shouldReduceMotion = useReducedMotion();
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => setMounted(true), []);
+  const mounted = React.useSyncExternalStore(() => () => {}, () => true, () => false);
   const variant = (mounted && shouldReduceMotion) ? fadeOnlyVariant : fadeUpVariant;
 
   return (
@@ -18,7 +17,7 @@ export function Reveal({ children, delay = 0, className = '' }: { children: Reac
         visible: {
           ...variant.visible,
           transition: {
-            //@ts-ignore
+            //@ts-expect-error - framer motion type definitions mismatch
             ...variant.visible.transition,
             delay
           }
@@ -49,8 +48,7 @@ export function StaggerContainer({ children, className = '' }: { children: React
 
 export function StaggerItem({ children, className = '' }: { children: React.ReactNode, className?: string }) {
   const shouldReduceMotion = useReducedMotion();
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => setMounted(true), []);
+  const mounted = React.useSyncExternalStore(() => () => {}, () => true, () => false);
   const variant = (mounted && shouldReduceMotion) ? fadeOnlyVariant : fadeUpVariant;
 
   return (

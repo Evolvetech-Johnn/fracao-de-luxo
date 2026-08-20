@@ -13,7 +13,7 @@ export function SolucaoSection() {
               <Badge>Fracionamento Direto de Frasco Original</Badge>
             </div>
             <p>
-              É pra isso que existe o <strong>Fracionamento Direto de Frasco Original</strong>: pegamos o perfume lacrado, exatamente como sai da fábrica da marca, e fracionamos em porções de 10ml — sem diluição, sem mistura, sem receita "parecida".
+              É pra isso que existe o <strong>Fracionamento Direto de Frasco Original</strong>: pegamos o perfume lacrado, exatamente como sai da fábrica da marca, e fracionamos em porções de 10ml — sem diluição, sem mistura, sem receita &quot;parecida&quot;.
             </p>
             <p>
               Cada porção sai de um lote identificado, fracionada sob demanda no momento do seu pedido — não fica meses parada em estoque perdendo a nota de saída. Você recebe a fragrância genuína, na medida certa pra testar de verdade: no seu dia a dia, na sua temperatura corporal.

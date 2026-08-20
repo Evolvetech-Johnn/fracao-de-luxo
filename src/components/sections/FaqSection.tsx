@@ -15,7 +15,7 @@ export function FaqSection() {
     },
     {
       q: "Posso montar meu próprio kit com fragrâncias diferentes?",
-      a: "Sim, o Kit Descoberta permite escolher 4 fragrâncias ou mais."
+      a: "Sim, o Kit Descoberta vem com 5 fragrâncias à sua escolha."
     },
     {
       q: "Quais as formas de pagamento?",

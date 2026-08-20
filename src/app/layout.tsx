@@ -16,8 +16,25 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://fracoesdeluxo.com.br'),
   title: "Frações de Luxo",
   description: "Descubra seu perfume favorito antes de gastar em um frasco",
+  openGraph: {
+    title: "Frações de Luxo",
+    description: "Descubra seu perfume favorito antes de gastar em um frasco",
+    url: "/",
+    siteName: "Frações de Luxo",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Frações de Luxo (Substitua por arte final antes de rodar tráfego pago)",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

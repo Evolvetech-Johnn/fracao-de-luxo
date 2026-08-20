@@ -1,3 +1,10 @@
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '';
 export const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || '';
 export const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '';
@@ -10,14 +17,14 @@ export const getWhatsAppLink = () => {
 
 export const trackLead = () => {
   if (typeof window !== "undefined") {
-    if ((window as any).fbq) (window as any).fbq('track', 'Lead');
-    if ((window as any).gtag) (window as any).gtag('event', 'whatsapp_click');
+    if (window.fbq) window.fbq('track', 'Lead');
+    if (window.gtag) window.gtag('event', 'whatsapp_click');
   }
 };
 
 export const trackInitiateCheckout = () => {
   if (typeof window !== "undefined") {
-    if ((window as any).fbq) (window as any).fbq('track', 'InitiateCheckout');
-    if ((window as any).gtag) (window as any).gtag('event', 'checkout_click');
+    if (window.fbq) window.fbq('track', 'InitiateCheckout');
+    if (window.gtag) window.gtag('event', 'checkout_click');
   }
 };

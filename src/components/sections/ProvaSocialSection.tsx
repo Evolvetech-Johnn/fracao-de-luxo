@@ -31,14 +31,14 @@ export function ProvaSocialSection() {
           </div>
           
           <Reveal>
-            <div className="bg-gray-100 border border-dashed border-gray-300 p-8 text-center rounded">
-              <p className="text-gray-500 italic">[INSERIR — depoimentos com nome e resultado específico, assim que os primeiros pedidos chegarem]</p>
+            <div className="border border-dashed border-rosa-antigo/40 bg-rosa-antigo/5 p-8 text-center rounded">
+              <p className="text-carvao/60 italic">[Espaço reservado — depoimentos com nome e resultado específico, assim que os primeiros pedidos chegarem]</p>
             </div>
           </Reveal>
 
           <Reveal>
-            <div className="bg-gray-100 border border-dashed border-gray-300 p-8 text-center rounded">
-              <p className="text-gray-500 italic">[INSERIR — número de porções vendidas ou clientes atendidos, após os primeiros 30 dias]</p>
+            <div className="border border-dashed border-rosa-antigo/40 bg-rosa-antigo/5 p-8 text-center rounded">
+              <p className="text-carvao/60 italic">[Espaço reservado — número de porções vendidas ou clientes atendidos, após os primeiros 30 dias]</p>
             </div>
           </Reveal>
         </div>

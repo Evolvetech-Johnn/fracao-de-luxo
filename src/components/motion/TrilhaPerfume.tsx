@@ -1,16 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useSyncExternalStore } from "react";
 import { motion, useScroll, useReducedMotion } from "framer-motion";
 
 export function TrilhaPerfume() {
   const { scrollYProgress } = useScroll();
   const shouldReduceMotion = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
 
   const isReduced = mounted && shouldReduceMotion;
 

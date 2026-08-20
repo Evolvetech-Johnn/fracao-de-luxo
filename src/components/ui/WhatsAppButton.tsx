@@ -11,10 +11,8 @@ export function WhatsAppButton({ children, className = '' }: { children: React.R
   };
 
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" onClick={handleClick} className="inline-block" aria-label="Abrir link do WhatsApp">
-      <Button variant="secondary-whatsapp" className={className}>
-        {children}
-      </Button>
-    </a>
+    <Button as="a" href={url} target="_blank" rel="noopener noreferrer" onClick={handleClick} className={`inline-block ${className}`} aria-label="Abrir link do WhatsApp" variant="secondary-whatsapp">
+      {children}
+    </Button>
   );
 }

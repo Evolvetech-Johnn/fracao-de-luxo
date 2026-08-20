@@ -1,15 +1,14 @@
 "use client";
-import React, { useEffect, useState, Suspense } from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "./Button";
 import { CHECKOUT_URL, trackInitiateCheckout } from "@/lib/tracking";
 
 function CheckoutButtonInner({ children, className = '' }: { children: React.ReactNode, className?: string }) {
   const searchParams = useSearchParams();
-  const [url, setUrl] = useState(CHECKOUT_URL);
 
-  useEffect(() => {
-    if (!CHECKOUT_URL) return;
+  const url = React.useMemo(() => {
+    if (!CHECKOUT_URL) return CHECKOUT_URL;
     try {
       const urlObj = new URL(CHECKOUT_URL);
       const utms = ['utm_source', 'utm_medium', 'utm_campaign'];
@@ -21,9 +20,9 @@ function CheckoutButtonInner({ children, className = '' }: { children: React.Rea
           changed = true;
         }
       });
-      if (changed) setUrl(urlObj.toString());
-    } catch(e) {
-      // invalid base url fallback
+      return changed ? urlObj.toString() : CHECKOUT_URL;
+    } catch {
+      return CHECKOUT_URL;
     }
   }, [searchParams]);
 
@@ -46,11 +45,9 @@ function CheckoutButtonInner({ children, className = '' }: { children: React.Rea
   }
 
   return (
-    <a href={url} onClick={handleClick} className="inline-block" aria-label="Ir para página de pagamento">
-      <Button variant="primary" className={className}>
-        {children}
-      </Button>
-    </a>
+    <Button as="a" href={url} onClick={handleClick} className={`inline-block ${className}`} aria-label="Ir para página de pagamento" variant="primary">
+      {children}
+    </Button>
   );
 }
 
